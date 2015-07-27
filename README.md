@@ -5,28 +5,28 @@
 This application allows friends to fund each other's wish list items through crowdfunding amongst a circle of friends. 
 
 ###User Stories
->![Alt text] (/Users/j47lee/desktop/project2/readme_files/user_stories.pdf)
+>![user_stories] (/Users/j47lee/desktop/project2/readme_files/user_stories.pdf)
 >>Minimum Viable Product
->>![Alt text] (/Users/j47lee/desktop/project2/readme_files/user_stories_mvp.pdf)
+>>![user_stories_mvp] (/Users/j47lee/desktop/project2/readme_files/user_stories_mvp.pdf)
 
 ###Entity Relationship Digram (ERD)
->![Alt text] (/Users/j47lee/desktop/project2/readme_files/erd.png)
+>![erd] (/Users/j47lee/desktop/project2/readme_files/erd.png)
 
 >>Minimum Viable Product
 >>
->>![Alt text] (/Users/j47lee/desktop/project2/readme_files/erd_mvp.png)
+>>![erd_mvp] (/Users/j47lee/desktop/project2/readme_files/erd_mvp.png)
 
 ###Wireframes
 
 >Landing Page
->![Alt text] (/Users/j47lee/desktop/project2/readme_files/landing_page.png)
+>![landing_page] (/Users/j47lee/desktop/project2/readme_files/landing_page.png)
 
 >>User Page
->>![Alt text] (/Users/j47lee/desktop/project2/readme_files/user_page.png)
+>>![user_page] (/Users/j47lee/desktop/project2/readme_files/user_page.png)
 
 >>Contributer Pages
->>![Alt text] (/Users/j47lee/desktop/project2/readme_files/contributor_page.png)
->>>![Alt text] (/Users/j47lee/desktop/project2/readme_files/contributor_page2.png)
+>>![contributor_page] (/Users/j47lee/desktop/project2/readme_files/contributor_page.png)
+>>>![contributor_page2] (/Users/j47lee/desktop/project2/readme_files/contributor_page2.png)
 
 ###Application
 - A retailer can incorporate with their shopping cart. In a scenario where a customer wants to reach a minimum purchase total to qualify for free shipping, the customer can choose to fund another user's wish list item to count towards their purchase total.
