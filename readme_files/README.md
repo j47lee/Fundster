@@ -2,7 +2,7 @@
 ##Gift Funding with Friends ("Giff")
 
 
-This application allows friends to fund each other's wish list items through crowdfunding amongst a circle of friends. 
+This application allows friends to fund each other's wish list items through crowdfunding amongst friends. 
 
 ###User Stories
 >![user_stories] (/Users/j47lee/desktop/project2/readme_files/user_stories.pdf)
@@ -15,6 +15,7 @@ This application allows friends to fund each other's wish list items through cro
 >>Minimum Viable Product
 >>
 >>![erd_mvp] (/Users/j47lee/desktop/project2/readme_files/erd_mvp.png)
+
 
 ###Wireframes
 
