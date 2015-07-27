@@ -10,11 +10,11 @@ This application allows friends to fund each other's wish list items through cro
 >>![user_stories_mvp] (/Users/j47lee/desktop/project2/readme_files/user_stories_mvp.pdf)
 
 ###Entity Relationship Digram (ERD)
->![erd] (/Users/j47lee/desktop/project2/readme_files/erd.png)
+>![erd] (/Users/j47lee/desktop/project2/readme_files/erd1.png)
 
 >>Minimum Viable Product
 >>
->>![erd_mvp] (/Users/j47lee/desktop/project2/readme_files/erd_mvp.png)
+>>![erd_mvp] (/Users/j47lee/desktop/project2/readme_files/erd_mvp1.png)
 
 
 ###Wireframes
