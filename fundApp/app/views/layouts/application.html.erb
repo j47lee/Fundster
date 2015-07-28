@@ -13,7 +13,7 @@
    </div>
 <% end %>
 <% if current_user %>
-  <p>Hello, <%= current_user.email %></p>
+  <p>Hello, you are logged in as <%= current_user.first_name %> (application.html.erb)</p>
   <%= link_to 'Logout', session_path(session), method: :delete%>
 <%else%>
   <%= link_to "Please Login", new_session_path %>

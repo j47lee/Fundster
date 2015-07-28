@@ -13,6 +13,16 @@
       </div >
     <% end %>
     <div class="field">
+
+            <div class="field">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name %>
+            </div>
+            <div class="field">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name %>
+            </div>
+
       <%= f.label :email %>
       <%= f.text_field :email %>
     </div>
@@ -24,5 +34,16 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>
     </div>
+
+            <div class="field">
+              <%= f.label :cc_no %>
+              <%= f.text_field :cc_no %>
+            </div>
+            <div class="field">
+              <%= f.label :billing_address %>
+              <%= f.text_field :billing_address %>
+            </div>
+
+
     <div class="actions"><%= f.submit %></div>
   <% end %>
