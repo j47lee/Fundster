@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'items/index'
-
-  get 'items/show'
-
   root "users#index"
   get '/logout' => 'sessions#destroy'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
+  resources :items
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
