@@ -1,4 +1,9 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<h2>ID: <%= @user.id %></h2>
 <h2><%= @user.email %></h2>
+<% @user.items.each do |item| %>
+<%= item.name %>
+<%end%>

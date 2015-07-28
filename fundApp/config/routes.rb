@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :users
   resources :items
 
+#TONY
+  get 'add_item_to_user' => 'items#add_item_to_user', as: :add_item_to_user
+  # get 'xxx anything xxx' => 'items#add_item_to_use', as: :add_item_to_user
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

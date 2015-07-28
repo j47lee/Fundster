@@ -6,5 +6,7 @@
 <h4>$<%= i.price %></h4>
 <%= image_tag(i.picture) %>
 <p>Item description: <%= i.description %></p>
-<button type="button">Add Me To Your Wish List!</button>
+
+<!--TONY-->
+<%= link_to "Add to wish list", add_item_to_user_path(:item => i.id) %>
 <% end %>
