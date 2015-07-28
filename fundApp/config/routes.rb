@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  # get 'sessions/new' => 'sessions#new'
-
-  root 'sessions#new'
-  get 'sessions' => 'sessions#new'
-  post 'sessions' => 'sessions#create'
-  delete 'sessions' => 'sessions#delete'
-
+  
+  root to: "users#index"
+  get '/logout' => 'sessions#destroy'
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.

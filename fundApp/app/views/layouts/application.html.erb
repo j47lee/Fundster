@@ -7,20 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-  <%= flash[:notice] %>
-</div>
-<% if current_user %>
-<ul>
-  <li> Welcome back <%= current_user.first_name %></li>
-  <li><%= link_to("Logout", sessions_path, method: :delete) %></li>
-</ul>
-<% else %>
-<ul>
-  <li><%= link_to("Log in", sessions_path) %></li>
-</ul>
+<% flash.each do |first_name, message| %>
+     <div class="flash-message flash-message-<%= first_name %>">
+    <%= message %>
+   </div>
 <% end %>
+<% if current_user %>
+  <p>Hello, <%= current_user.email %></p>
+  <%= link_to 'Logout', session_path(session), method: :delete%>
+<%else%>
+  <%= link_to "Please Login", new_session_path %>
+<%end%>
 <%= yield %>
-
 </body>
 </html>
