@@ -1,49 +1,47 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
- <h1>Sign Up</h1>
   <%= form_for @user do |f| %>
-      <% if @user.errors.any? %>
-        <div class="error_messages">
-        <h2>Form is invalid</h2>
-        <ul>
-          <% for message in @user.errors.full_messages %>
-              <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div >
+    <% if @user.errors.any? %>
+          <div class="error_messages">
+            <div class="alert alert-danger" role="alert">
+              <div>Form is invalid</div>
+              <% for message in @user.errors.full_messages %>
+                <div><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <%= message %></div>
+              <% end %>
+            </div>
+          </div >
     <% end %>
-    <div class="field">
 
-            <div class="field">
-              <%= f.label :first_name %>
-              <%= f.text_field :first_name %>
-            </div>
-            <div class="field">
-              <%= f.label :last_name %>
-              <%= f.text_field :last_name %>
-            </div>
-
+ <h1>Sign up</h1>
+    <div class="field form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, placeholder: "Last Name" %>
+    </div>
+    <div class="field form-group">
       <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, placeholder: "Email" %>
     </div>
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, placeholder: "Password" %>
     </div>
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
     </div>
-
-            <div class="field">
-              <%= f.label :cc_no %>
-              <%= f.text_field :cc_no %>
-            </div>
-            <div class="field">
-              <%= f.label :billing_address %>
-              <%= f.text_field :billing_address %>
-            </div>
-
+    <div class="field form-group">
+      <%= f.label :cc_no %>
+      <%= f.text_field :cc_no, placeholder: "Credit Card Number" %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :billing_address %>
+      <%= f.text_field :billing_address, placeholder: "Billing Address" %>
+    </div>
 
     <div class="actions"><%= f.submit %></div>
   <% end %>
+
+  <p>Find me in app/views/users/new.html.erb</p>

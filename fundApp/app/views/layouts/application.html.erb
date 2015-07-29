@@ -7,17 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Fund with Friends</a>
+      </div>
+    </div>
+  </nav>
+
 <% flash.each do |first_name, message| %>
-     <div class="flash-message flash-message-<%= first_name %>">
+  <!-- <div class="flash-message flash-message-<%= first_name %>"> -->
+  <div class="alert alert-danger" role="alert">    <!-- takes from SessionsController -->
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
     <%= message %>
-   </div>
+  </div>
 <% end %>
+
 <% if current_user %>
-  <p>Hello, you are logged in as <%= current_user.first_name %> (application.html.erb)</p>
+  <div>Hello, you are logged in as <%= current_user.first_name %> (application.html.erb)</div>
   <%= link_to 'Logout', session_path(session), method: :delete%>
 <%else%>
-  <%= link_to "Please Login", new_session_path %>
+  <%= link_to "Please Login (application.html.erb)", new_session_path %>
 <%end%>
+
 <%= yield %>
+
 </body>
 </html>

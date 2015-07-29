@@ -2,10 +2,10 @@
 <p>Find me in app/views/items/index.html.erb</p>
 
 <% @items.each do |i| %>
-<h3><%= i.name %></h3>
-<h4>$<%= i.price %></h4>
+<div><%= i.name %></div>
+<div>$<%= i.price %></div>
 <%= image_tag(i.picture) %>
-<p>Item description: <%= i.description %></p>
+<div>Item description: <%= i.description %></div>
 
 <!--TONY-->
 <%= link_to "Add to wish list", add_item_to_user_path(:item => i.id) %>

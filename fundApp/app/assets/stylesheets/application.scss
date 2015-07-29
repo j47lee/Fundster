@@ -15,4 +15,12 @@
  */
 
  @import "bootstrap-sprockets";
- @import "bootstrap"
+ @import "bootstrap";
+
+ body {
+   text-align: center;
+ }
+
+ h3 {
+   color: red;
+ }
