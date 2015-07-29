@@ -3,6 +3,17 @@
 <div class="row">
   <div class="col-sm-6 col-md-4">
     <% @user.items.each do |i| %>
+
+    <div>code test
+      <div>
+
+        <% prog = User.first.wish_list[i.name] %>
+        <%= prog %>
+
+      </div>
+    </div>
+
+
       <div class="thumbnail">
         <%= image_tag(i.picture) %>
               <div class="caption">
