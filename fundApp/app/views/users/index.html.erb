@@ -1,9 +1,11 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Friends</h1>
 
 <% @users.each do |u| %>
-<div><%= u.first_name %></div>
-<div>ID: <%= u.id %></div>
-<div>Email: <%= u.email %></div>
-<div>Password: <%= u.password_digest %></div>
+<div><%= link_to "#{u.first_name}'s page", user_path(u.id), class: "btn btn-secondary", role: "button", style: "font-size:35px;" %></div>
+<!-- <div><%= u.first_name %></div> -->
+<!-- <div>ID: <%= u.id %></div> -->
+<!-- <div>Email: <%= u.email %></div> -->
+<!-- <div>Password: <%= u.password_digest %></div> -->
 <%end%>
+
+<p>Find me in app/views/users/index.html.erb</p>
