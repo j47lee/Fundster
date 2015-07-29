@@ -16,6 +16,8 @@
     </div>
   </nav>
 
+<div><%= link_to "list of users", users_path %> | <%= link_to "list of items", items_path %></div>
+
 <% flash.each do |first_name, message| %>
   <!-- <div class="flash-message flash-message-<%= first_name %>"> -->
   <div class="alert alert-danger" role="alert">    <!-- takes from SessionsController -->
