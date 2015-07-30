@@ -24,12 +24,21 @@ class UsersController < ApplicationController
   end
 
 ## not working, increment hash ##
-  def fund
-    @users = User.all
-    @user = User.find(params[:id])
-    @user.wish_list["Jordan Retro 20"]+=25
-    @user.save
-  end
+  # def add_fund
+  #   @users = User.all
+  #   @user = User.find(params[:id])
+  #   @user.wish_list["Jordan Retro 20"]+=25
+  #   @user.save
+  # end
+  # 
+  # # not working, increment hash ##
+  #   def add_fund
+  #     @users = User.all
+  #     @user = User.find(params[:id])
+  #     @user.wish_list["Jordan Retro 20"]+=25
+  #     @user.save
+  #   end
+
 
   private
   def user_params

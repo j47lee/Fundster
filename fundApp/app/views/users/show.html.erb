@@ -7,9 +7,11 @@
     <div>code test
       <div>
 
-<!--displays wish_list hash value for each shoe-->
-        <% prog = @user.wish_list[i.name] %>
-        <h3><%= prog %>% funded</h3>
+
+      <% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
+      <% user_item.fund+=15 %>
+      <% user_item.save %>
+
 
       </div>
     </div>
@@ -20,8 +22,7 @@
               <div class="caption">
                   <h2><%= i.name %><h2>
                   <h3>$<%= i.price %></h3>
-                  <h3><%= i.progress %>% funded</h3>
-
+          <h1>$ funded</h1>
             <!--PROGRESS BAR, update the style="width: 30%" to update progress bar -->
                   <div class="progress">
                       <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:10%">
