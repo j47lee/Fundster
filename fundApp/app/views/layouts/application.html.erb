@@ -16,7 +16,11 @@
     </div>
   </nav>
 
-<div><%= link_to "list of users", users_path %> | <%= link_to "list of items", items_path %></div>
+<div><%= link_to "list of friends", users_path %> | <%= link_to "list of items", items_path %></div>
+
+  <% if current_user %>
+    <%= link_to "My Page", user_path(current_user.id) %></div>
+  <% end %>
 
 <% flash.each do |first_name, message| %>
   <!-- <div class="flash-message flash-message-<%= first_name %>"> -->
