@@ -5,9 +5,8 @@
     <% @user.items.each do |i| %>
 
 
-<!--TESTING CODING HERE-->
-    <div>code test
-      <div>
+<!--CODE TESTING AREA BEGINS-->
+<div>code test
 
 
 
@@ -15,16 +14,10 @@
         <% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
         <% user_item.increment!(:fund, by = 5) %>
 
-        <!--DELETES ITEM, MAKE INTO A BUTTON-->
-        <h1><%= link_to("Delete My Item", remove_item_path(@user.id, i.id),  method: :delete, data: { confirm: "Are you sure?" }) %></h1>
 
 
-
-
-      </div>
-    </div>
-
-<!--TESTING CODE ENDS HERE-->
+</div>
+<!--CODE TESTING AREA ENDS-->
 
 
       <div class="thumbnail">
@@ -43,12 +36,17 @@
 
 
 
-                  <!--BUTTON NEEDS TO INCREMENT FUND-->
+                  <!--BUTTON TO INCREMENT FUND(not working!) OR DELETE(working)-->
                     <div id="wish_btn">
                       <% unless current_user.id == @user.id %>
+                          <!--FUND OTHER USER'S ITEM-->
                           <%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %>
+                      <% else %>
+                          <!--DELETES CURRENT USER'S ITEM-->
+                          <%= link_to("Remove this item", remove_item_path(@user.id, i.id),  method: :delete, data: { confirm: "Are you sure you want to remove this item?" }) %></div>
                       <%end%>
                     </div>
+
 
 
 

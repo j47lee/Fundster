@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   resources :users
   resources :items
 
+#JIMMY DELETE USERS ITEMS
   delete "/users/:id/items/:item_id" => "users#remove_item", as: :remove_item
 
-#TONY
+#TONY ADD ITEMS TO USER
   get 'add_item_to_user' => 'items#add_item_to_user', as: :add_item_to_user
 
 

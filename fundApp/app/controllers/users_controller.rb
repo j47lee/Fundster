@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     end
   end
 
-# ## CLICK BUTTON TO FUND not working?
+# ## FUND OTHER USER'S ITEM (not working!!!!!)
 #   def inc_fund
 #     @users = User.all
 #     @user = User.find(params[:id])
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 #     @user_item.increment!(:fund, by = 5)
 #   end
 
-## DELETE user's item????
+## DELETES CURRENT USER'S ITEM
   def remove_item
     @user = User.find(params[:id])
     @item = Item.find(params[:item_id])
@@ -40,8 +40,6 @@ class UsersController < ApplicationController
     flash[:notice] = "successfully removed shoe"
     redirect_to user_path
   end
-
-
 
   private
   def user_params
