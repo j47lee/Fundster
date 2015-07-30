@@ -36,7 +36,7 @@
                     <div class="fund_delete_btn">
                       <% unless current_user.id == @user.id %>
                           <!--FUND OTHER USER'S ITEM-->
-                          <%= link_to("Fund Me", fund_item_path(@user.id, i.id),  method: :patch, data: { confirm: "Are you sure you want to fund this item?" }, class: "btn btn-info btn-lg", role: "button" ) %></div>
+                          <%= link_to("Fund +$15", fund_item_path(@user.id, i.id),  method: :patch, data: { confirm: "Are you sure you want to fund this item?" }, class: "btn btn-info btn-lg", role: "button" ) %></div>
                       <% else %>
                           <!--DELETES CURRENT USER'S ITEM-->
                           <%= link_to("Remove this item", remove_item_path(@user.id, i.id),  method: :delete, data: { confirm: "Are you sure you want to remove this item?" }, class: "btn btn-danger btn-sm", role: "button" ) %></div>

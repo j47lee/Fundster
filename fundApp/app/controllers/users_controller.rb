@@ -17,30 +17,21 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      redirect_to items_path
+      redirect_to user_path
     else
       render 'new'
     end
   end
-
-# ## FUND OTHER USER'S ITEM (not working!!!!!)
-#   def inc_fund
-#     @users = User.all
-#     @user = User.find(params[:id])
-#     @user_item = ItemUser.all.where(user_id:@user, item_id:12).first
-#     @user_item.increment!(:fund, by = 5)
-#   end
 
 ## FUND ITEM
   def fund_item
     @user = User.find(params[:id])
     @item = Item.find(params[:item_id])
     @user_item = ItemUser.all.where(user_id:@user, item_id:@item).first
-    @user_item.increment!(:fund, by = 2)
-    flash[:notice] = "Funded!!!!"
+    @user_item.increment!(:fund, by = 15)
+    flash[:notice] = "Thank! Item successfully funded."
     redirect_to user_path
   end
-
 
 ## DELETES CURRENT USER'S ITEM
   def remove_item

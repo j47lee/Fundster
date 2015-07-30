@@ -9,12 +9,11 @@ Rails.application.routes.draw do
 #JIMMY DELETE USERS ITEMS
   delete "/users/:id/items/:item_id" => "users#remove_item", as: :remove_item
 
-#FUND USER
+#FUND USER ITEM
   patch "/users/:id/items/:item_id" => "users#fund_item", as: :fund_item
 
 #TONY ADD ITEMS TO USER
   get 'add_item_to_user' => 'items#add_item_to_user', as: :add_item_to_user
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.
