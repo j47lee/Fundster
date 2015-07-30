@@ -31,13 +31,24 @@ class UsersController < ApplicationController
 #     @user_item.increment!(:fund, by = 5)
 #   end
 
+## FUND ITEM
+  def fund_item
+    @user = User.find(params[:id])
+    @item = Item.find(params[:item_id])
+    @user_item = ItemUser.all.where(user_id:@user, item_id:@item).first
+    @user_item.increment!(:fund, by = 2)
+    flash[:notice] = "Funded!!!!"
+    redirect_to user_path
+  end
+
+
 ## DELETES CURRENT USER'S ITEM
   def remove_item
     @user = User.find(params[:id])
     @item = Item.find(params[:item_id])
     # @item.destroy
     ItemUser.all.where(user_id:@user,item_id:@item).first.destroy
-    flash[:notice] = "successfully removed shoe"
+    flash[:notice] = "You've successfully removed the item."
     redirect_to user_path
   end
 

@@ -12,10 +12,6 @@
     <!--INCREMENTS FUND, MAKE INTO A BUTTON-->
 
 
-    <% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
-    <% user_item.increment!(:fund, by = 20) %>
-
-
 
 
 
@@ -27,7 +23,7 @@
               <div class="caption">
                   <h2><%= i.name %><h2>
                   <h3>$<%= i.price %></h3>
-          <h1>$<%= user_item.fund %> funded</h1>
+          <h1>$<%= ItemUser.all.where(user_id:@user, item_id:i).first.fund %> funded</h1>
             <!--PROGRESS BAR, update the style="width: 30%" to update progress bar -->
                   <div class="progress">
                       <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:65.78%">
@@ -36,21 +32,16 @@
                   </div>
                   <p class="ui_description"><%= i.description %></p>
 
-
-
-                  <!--BUTTON TO INCREMENT FUND(not working!) OR DELETE(working)-->
+                  <!--BUTTON TO FUND OR DELETE(working)-->
                     <div class="fund_delete_btn">
                       <% unless current_user.id == @user.id %>
                           <!--FUND OTHER USER'S ITEM-->
-                          <%= link_to "Fund", items_path, class: "btn btn-primary btn-lg", role: "button" %>
+                          <%= link_to("Fund Me", fund_item_path(@user.id, i.id),  method: :patch, data: { confirm: "Are you sure you want to fund this item?" }, class: "btn btn-info btn-lg", role: "button" ) %></div>
                       <% else %>
                           <!--DELETES CURRENT USER'S ITEM-->
                           <%= link_to("Remove this item", remove_item_path(@user.id, i.id),  method: :delete, data: { confirm: "Are you sure you want to remove this item?" }, class: "btn btn-danger btn-sm", role: "button" ) %></div>
                       <%end%>
                     </div>
-
-
-
 
               </div>
         </div>
