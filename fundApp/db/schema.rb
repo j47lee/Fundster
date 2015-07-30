@@ -23,11 +23,6 @@ ActiveRecord::Schema.define(version: 20150729190044) do
     t.float    "progress"
   end
 
-  create_table "items_users", id: false, force: :cascade do |t|
-    t.integer "item_id", null: false
-    t.integer "user_id", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
