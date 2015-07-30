@@ -23,23 +23,6 @@ class UsersController < ApplicationController
     end
   end
 
-## not working, increment hash ##
-  # def add_fund
-  #   @users = User.all
-  #   @user = User.find(params[:id])
-  #   @user.wish_list["Jordan Retro 20"]+=25
-  #   @user.save
-  # end
-  # 
-  # # not working, increment hash ##
-  #   def add_fund
-  #     @users = User.all
-  #     @user = User.find(params[:id])
-  #     @user.wish_list["Jordan Retro 20"]+=25
-  #     @user.save
-  #   end
-
-
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :cc_no, :billing_address)

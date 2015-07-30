@@ -7,11 +7,8 @@
     <div>code test
       <div>
 
-
-      <% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
-      <% user_item.fund+=15 %>
-      <% user_item.save %>
-
+        <% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
+        <% user_item.increment!(:fund, by = 10) %>
 
       </div>
     </div>
