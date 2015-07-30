@@ -11,37 +11,40 @@
           </div >
     <% end %>
 
- <h1>Sign Up</h1>
-    <div class="field form-group">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, placeholder: "First Name" %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, placeholder: "Last Name" %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :email %>
-      <%= f.text_field :email, placeholder: "Email" %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, placeholder: "Password" %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :cc_no %>
-      <%= f.text_field :cc_no, placeholder: "Credit Card Number" %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :billing_address %>
-      <%= f.text_field :billing_address, placeholder: "Billing Address" %>
-    </div>
+<div class="banner-image">
+   <h1>Sign Up</h1>
+   <div class="col-sm-4 col-sm-offset-4">
+      <div class="field form-group">
+        <% f.label :first_name %>
+        <%= f.text_field :first_name, placeholder: "First Name", class: "form-control"%>
+      </div>
+      <div class="field form-group">
+        <% f.label :last_name %>
+        <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <% f.label :email %>
+        <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <% f.label :password %>
+        <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <% f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <% f.label :cc_no %>
+        <%= f.text_field :cc_no, placeholder: "Credit Card Number", class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <% f.label :billing_address %>
+        <%= f.text_field :billing_address, placeholder: "Billing Address", class: "form-control" %>
+      </div>
+      <div class="actions"><%= f.submit %></div>
+    <% end %>
+  </div>
+</div>
 
-    <div class="actions"><%= f.submit %></div>
-  <% end %>
-
-  <p>Find me in app/views/users/new.html.erb</p>
+<p>Find me in app/views/users/new.html.erb</p>
