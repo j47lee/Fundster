@@ -22,14 +22,29 @@
                   <h3>$<%= i.price %></h3>
                   <h3><%= i.progress %>% funded</h3>
 
-            <!--update the style="width: 30%" to update progress bar -->
+            <!--PROGRESS BAR, update the style="width: 30%" to update progress bar -->
                   <div class="progress">
                       <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:10%">
                       <span class="sr-only">Percent Complete (success)</span>
                       </div>
                   </div>
                   <p class="ui_description"><%= i.description %></p>
-                  <div id="wish_btn"><%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %></div>
+
+
+            <!-- button not working, not routing properly -->
+                    <div id="wish_btn">
+                      <% if current_user %>
+                          <%= link_to "Fund", users_path, class: "btn btn-primary", role: "button" %>
+                      <%else%>
+                          <%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %>
+                      <%end%>
+                  </div>
+
+
+
+
+
+                  <!-- <div id="wish_btn"><%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %></div> -->
 
               <!-- Not working -->
                   <%= link_to "Fund Fund Fund", users_path, method: :fund %>
