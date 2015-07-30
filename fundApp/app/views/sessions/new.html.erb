@@ -1,5 +1,5 @@
 <div class="banner-image">
-<h1>Login</h1>
+<h1 class="login_header">Login</h1>
 
 <div class="col-sm-4 col-sm-offset-4">
   <%= form_tag sessions_path do %>
@@ -11,7 +11,7 @@
 
       <div class="field form-group">
         <%= label_tag %>
-        <%= password_field_tag :password, placeholder: "Password", class: "form-control" %>
+        <%= password_field_tag :password, nil, placeholder: "Password", class: "form-control" %>
       </div>
 
       <div class="actions"><%= submit_tag "Log in", class: "btn btn-default" %></div>
