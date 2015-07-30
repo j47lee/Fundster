@@ -22,6 +22,11 @@
     <%= link_to "My Page", user_path(current_user.id) %></div>
   <% end %>
 
+  <% if current_user %>
+    <%= link_to "List of my friends", users_path %></div>
+  <% end %>
+
+
 <% flash.each do |first_name, message| %>
   <!-- <div class="flash-message flash-message-<%= first_name %>"> -->
   <div class="alert alert-danger" role="alert">    <!-- takes from SessionsController -->
@@ -35,6 +40,7 @@
   <%= link_to 'Logout', session_path(session), method: :delete%>
 <%else%>
   <%= link_to "Please Login (application.html.erb)", new_session_path %>
+  <%= link_to "Please Signup (application.html.erb)", new_user_path %>
 <%end%>
 
 <%= yield %>

@@ -4,19 +4,27 @@
   <div class="col-sm-6 col-md-4">
     <% @user.items.each do |i| %>
 
+
+<!--TESTING CODING HERE-->
     <div>code test
       <div>
+
+
 
         <!--INCREMENTS FUND, MAKE INTO A BUTTON-->
         <% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
         <% user_item.increment!(:fund, by = 5) %>
 
         <!--DELETES ITEM, MAKE INTO A BUTTON-->
+        <h1><%= link_to("Delete My Item", remove_item_path(@user.id, i.id),  method: :delete, data: { confirm: "Are you sure?" }) %></h1>
+
 
 
 
       </div>
     </div>
+
+<!--TESTING CODE ENDS HERE-->
 
 
       <div class="thumbnail">
@@ -34,12 +42,14 @@
                   <p class="ui_description"><%= i.description %></p>
 
 
+
                   <!--BUTTON NEEDS TO INCREMENT FUND-->
                     <div id="wish_btn">
                       <% unless current_user.id == @user.id %>
                           <%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %>
                       <%end%>
                     </div>
+
 
 
               </div>

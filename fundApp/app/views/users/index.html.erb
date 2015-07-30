@@ -2,7 +2,7 @@
 
 <% @users.each do |u| %>
   <% unless current_user.id == u.id %>
-    <div><%= link_to "#{u.first_name}'s page", user_path(u.id), class: "btn btn-secondary", role: "button", style: "font-size:35px;" %></div>
+    <%= link_to "#{u.first_name} |", user_path(u.id), class: "btn btn-secondary", role: "button", style: "font-size:25px;" %>
   <% end %>
 <!-- <div><%= u.first_name %></div> -->
 <!-- <div>ID: <%= u.id %></div> -->
