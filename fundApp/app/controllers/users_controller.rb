@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # before_action :authorize, only: :index
+  before_action :authorize, only: [:index, :show]
+
   def index
     @users = User.all
   end
@@ -20,7 +21,14 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
 
+## not working, increment hash ##
+  def fund
+    @users = User.all
+    @user = User.find(params[:id])
+    @user.wish_list["Jordan Retro 20"]+=25
+    @user.save
   end
 
   private
