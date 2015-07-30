@@ -10,7 +10,11 @@
                     <h4 id="i_price">$<%= i.price %></h4>
                     <p id="i_description"><%= i.description.truncate(150) %></p>
                     <div id="wish_btn"><%= link_to "More details...", item_path(i.id), class: "btn btn-secondary", role: "button" %></div>
+
+
                     <div id="wish_btn"><%= link_to "Add to wish list!", add_item_to_user_path(:item => i.id), class: "btn btn-primary", role: "button" %></div>
+
+
                 </div>
             </div>
         <% end %>

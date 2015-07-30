@@ -1,0 +1,6 @@
+<!--INCREMENTS FUND, MAKE INTO A BUTTON-->
+<% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
+<% user_item.increment!(:fund, by = 5) %>
+
+<!--DELETES ITEM, MAKE INTO A BUTTON-->
+<% ItemUser.all.where(user_id:@user,item_id:i).first.destroy %>

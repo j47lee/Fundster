@@ -23,6 +23,14 @@ class UsersController < ApplicationController
     end
   end
 
+# ## not working?
+#   def inc_fund
+#     @users = User.all
+#     @user = User.find(params[:id])
+#     @user_item = ItemUser.all.where(user_id:@user, item_id:12).first
+#     @user_item.increment!(:fund, by = 5)
+#   end
+
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :cc_no, :billing_address)

@@ -7,8 +7,13 @@
     <div>code test
       <div>
 
+        <!--INCREMENTS FUND, MAKE INTO A BUTTON-->
         <% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
-        <% user_item.increment!(:fund, by = 10) %>
+        <% user_item.increment!(:fund, by = 5) %>
+        
+        <!--DELETES ITEM, MAKE INTO A BUTTON-->
+
+
 
       </div>
     </div>
@@ -19,17 +24,17 @@
               <div class="caption">
                   <h2><%= i.name %><h2>
                   <h3>$<%= i.price %></h3>
-          <h1>$ funded</h1>
+          <h1>$<%= user_item.fund %> funded</h1>
             <!--PROGRESS BAR, update the style="width: 30%" to update progress bar -->
                   <div class="progress">
-                      <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+                      <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:65.78%">
                       <span class="sr-only">Percent Complete (success)</span>
                       </div>
                   </div>
                   <p class="ui_description"><%= i.description %></p>
 
 
-            <!-- button not working, not routing properly -->
+            <!-- TEST: button not working, not routing properly -->
                     <div id="wish_btn">
                       <% if current_user %>
                           <%= link_to "Fund", users_path, class: "btn btn-primary", role: "button" %>
@@ -37,15 +42,7 @@
                           <%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %>
                       <%end%>
                   </div>
-
-
-
-
-
                   <!-- <div id="wish_btn"><%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %></div> -->
-
-              <!-- Not working -->
-                  <%= link_to "Fund Fund Fund", users_path, method: :fund %>
 
 
 
@@ -63,7 +60,7 @@
 <% @users.each do |u| %>
 <%= link_to "#{u.first_name}", user_path(u.id), class: "btn btn-secondary", role: "button", style: "font-size:20px;" %>
 <%end%>
--->
+ -->
 
 <p>Find me in app/views/users/show.html.erb</p>
 <p>ID: <%= @user.id %></p>
