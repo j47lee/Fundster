@@ -10,7 +10,7 @@
         <!--INCREMENTS FUND, MAKE INTO A BUTTON-->
         <% user_item = ItemUser.all.where(user_id:@user, item_id:i).first %>
         <% user_item.increment!(:fund, by = 5) %>
-        
+
         <!--DELETES ITEM, MAKE INTO A BUTTON-->
 
 
@@ -34,16 +34,12 @@
                   <p class="ui_description"><%= i.description %></p>
 
 
-            <!-- TEST: button not working, not routing properly -->
+                  <!--BUTTON NEEDS TO INCREMENT FUND-->
                     <div id="wish_btn">
-                      <% if current_user %>
-                          <%= link_to "Fund", users_path, class: "btn btn-primary", role: "button" %>
-                      <%else%>
+                      <% unless current_user.id == @user.id %>
                           <%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %>
                       <%end%>
-                  </div>
-                  <!-- <div id="wish_btn"><%= link_to "Fund", items_path, class: "btn btn-primary", role: "button" %></div> -->
-
+                    </div>
 
 
               </div>
