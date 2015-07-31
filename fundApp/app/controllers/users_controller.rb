@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @item = Item.find(params[:item_id])
     @user_item = ItemUser.all.where(user_id:@user, item_id:@item).first
     @user_item.increment!(:fund, by = 15)
-    flash[:notice] = "Thank! Item successfully funded."
+    flash[:notice] = "Thanks! Item successfully funded."
     redirect_to user_path
   end
 

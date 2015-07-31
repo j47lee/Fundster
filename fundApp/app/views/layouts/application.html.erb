@@ -16,13 +16,12 @@
     </div>
   </nav>
 
-<h4>Clothing | <%= link_to "Shoes", items_path %> | Accesories | Designer Collections | Clearance </h4>
+<div class="header_nav"><a href="#">Clothing</a> | <%= link_to "Shoes", items_path %> | <a href="#">Accesories</a> | <a href="#">Designer Collections</a> | <a href="#">Clearance</a> </div>
 <!-- <h3><%= link_to "List of Friends", users_path %></h3> -->
 
-  <% if current_user %>
-    <%= link_to "My Wish List", user_path(current_user.id) %> |
-    <%= link_to "Friends To Fund", users_path %>
-  <% end %>
+<% if current_user %>
+  <div class="small_nav"><%= link_to "My Wish List", user_path(current_user.id) %> | <%= link_to "Friends to Fund", users_path %></div>
+<% end %>
 
 <% flash.each do |first_name, message| %>
   <!-- <div class="flash-message flash-message-<%= first_name %>"> -->
@@ -36,7 +35,7 @@
   <div>Welcome, <%= current_user.first_name %></div>
   <%= link_to 'Logout', session_path(session), method: :delete%>
 <%else%>
-  <div><%= link_to "Login", new_session_path %> | <%= link_to "Sign Up", new_user_path %></div>
+  <div class="small_nav"><%= link_to "Login", new_session_path %> | <%= link_to "Sign Up", new_user_path %></div>
 <%end%>
 
 <%= yield %>

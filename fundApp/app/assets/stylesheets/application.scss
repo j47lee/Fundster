@@ -21,6 +21,19 @@ body {
   text-align: center;
 }
 
+.header_nav {
+  font-size: 18px;
+  color: #E6E6E6;
+  padding: 5px 0;
+  a {
+    padding: 0 7px;
+  }
+}
+
+.small_nav {
+  padding: 8px 0 20px 0;
+}
+
 .footer_text {
   color: #B2B2B2;
   padding: 20px;
