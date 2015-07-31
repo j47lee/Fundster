@@ -44,6 +44,16 @@ class UsersController < ApplicationController
     redirect_to user_path
   end
 
+## PERCENTAGE COMPLETE FOR USERS ITEM
+  # def percentage_complete
+  #   @user = User.find(params[:id])
+  #   @item = Item.find(params[:item_id])
+  #   funded = ItemUser.all.where(user_id:@user,item_id:@item).first.fund
+  #   price = Item.find(@item).price
+  #   percentage = funded/price
+  #   return "width:#{percentage}%"
+  # end
+
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :cc_no, :billing_address)

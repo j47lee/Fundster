@@ -22,15 +22,4 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # def percentage_complete
-  #   @user = User.find(params[:id])
-  #   @item = Item.find(params[:item_id])
-  #   funded = ItemUser.all.where(user_id:@user,item_id:@item).first.fund
-  #   price = Item.find(@item).price
-  #   percentage = funded/price
-  #   return "width:#{percentage}%"
-  # end
-
-
-
 end
