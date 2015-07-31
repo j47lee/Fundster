@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       # flash[:notice] = "You successfully logged in with #{user.email}!"
       # redirect_to root_path, notice: "You've logged in! #{user.email} (SessionsController)"
-      redirect_to users_path(params[:id]), notice: "You've logged in! #{user.email} (SessionsController)"
+      redirect_to user_path(id:current_user.id), notice: "You've logged in! #{user.email} (SessionsController)"
     else
       flash.now.alert = "Sorry, you failed to log in with #{params[:email]} (SessionsController)"
       render 'new'

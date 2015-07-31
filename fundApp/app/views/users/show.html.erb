@@ -21,7 +21,6 @@
                   <!-- <p class="ui_description"><%= i.description.truncate(200) %></p> -->
                   <div id="thumbnail_btn"><%= link_to "Item details", item_path(i.id), class: "btn btn-secondary", role: "button" %></div>
 
-
                   <!--BUTTON TO FUND OR DELETE(working)-->
                     <div class="fund_delete_btn">
                       <% unless current_user.id == @user.id %>
