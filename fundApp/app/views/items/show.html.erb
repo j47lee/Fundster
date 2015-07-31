@@ -4,7 +4,13 @@
 <div id="item_show">
   <%= image_tag(@item.picture) %>
   <p><%= @item.description %></p>
-  <div id="wish_btn"><%= link_to "Add to wish list!", add_item_to_user_path(:item => @item.id), class: "btn btn-primary", role: "button" %></div>
+
+  <% if current_user %>
+    <div id="thumbnail_btn"><%= link_to "Add to wish list!", add_item_to_user_path(:item => @item.id), class: "btn btn-primary", role: "button" %></div>
+  <%else%>
+    <%= link_to "Add to wish list!", new_session_path, class: "btn btn-primary", role: "button" %>
+  <%end%>
+  
 </div>
 
 <p>Find me in app/views/items/show.html.erb</p>

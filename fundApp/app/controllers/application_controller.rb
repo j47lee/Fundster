@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 
   helper_method :current_user
+  # helper_method :percentage_complete
 
   protect_from_forgery with: :exception
 
@@ -20,5 +21,16 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path
     end
   end
+
+  # def percentage_complete
+  #   @user = User.find(params[:id])
+  #   @item = Item.find(params[:item_id])
+  #   funded = ItemUser.all.where(user_id:@user,item_id:@item).first.fund
+  #   price = Item.find(@item).price
+  #   percentage = funded/price
+  #   return "width:#{percentage}%"
+  # end
+
+
 
 end

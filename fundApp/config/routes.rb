@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 #FUND USER ITEM
   patch "/users/:id/items/:item_id" => "users#fund_item", as: :fund_item
 
+#PERCENTAGE COMPLETE
+  # get "/users/:id/items/:item_id" => "users#percentage_complete", as: :percentage_complete
+
 #TONY ADD ITEMS TO USER
   get 'add_item_to_user' => 'items#add_item_to_user', as: :add_item_to_user
 
