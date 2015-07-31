@@ -1,11 +1,13 @@
-<h1>Friends to Fund</h1>
+<div class="dept_header">Friends to Fund</div>
 
 <% @users.each do |u| %>
+<div>
   <% unless current_user.id == u.id %>
-    <%= link_to "#{u.first_name} #{u.last_name} |", user_path(u.id), class: "btn btn-secondary", role: "button", style: "font-size:25px;" %>
+    <%= link_to "#{u.first_name} #{u.last_name}", user_path(u.id), class: "btn btn-secondary", role: "button", style: "font-size:25px;" %>
   <% end %>
 <!-- <div><%= u.first_name %></div> -->
 <!-- <div>ID: <%= u.id %></div> -->
 <!-- <div>Email: <%= u.email %></div> -->
 <!-- <div>Password: <%= u.password_digest %></div> -->
+</div>
 <%end%>
