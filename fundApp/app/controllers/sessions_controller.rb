@@ -14,13 +14,13 @@ class SessionsController < ApplicationController
       # redirect_to root_path, notice: "You've logged in! #{user.email} (SessionsController)"
       redirect_to user_path(id:current_user.id), notice: "You've logged in! #{user.email} (SessionsController)"
     else
-      flash.now.alert = "Sorry, you failed to log in with #{params[:email]} (SessionsController)"
+      flash.now.alert = "Sorry, you failed to log in with #{params[:email]}."
       render 'new'
     end
   end
 
   def destroy
    session[:user_id] = nil
-   redirect_to root_url, notice: "You have logged out (SessionsController)"
+   redirect_to root_url, notice: "You have successfully logged out."
   end
 end

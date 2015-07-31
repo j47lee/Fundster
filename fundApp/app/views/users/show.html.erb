@@ -1,4 +1,10 @@
-<h1><%= @user.first_name %>'s Wish List</h1>
+<h1>
+  <% if current_user == @user %>
+    My Wish List
+  <% else %>
+    <%= @user.first_name %>'s Wish List
+  <% end %>
+</h1>
 
 <div class="row">
     <% @user.items.each do |i| %>
@@ -40,14 +46,12 @@
 
 </div>
 
-<%= link_to "Back to List of Friends", users_path, class: "btn btn-secondary", role: "button", style: "font-size:20px;" %>
-
-<!--
 <h3>Other friends' wish lists...</h3>
 <% @users.each do |u| %>
-<%= link_to "#{u.first_name}", user_path(u.id), class: "btn btn-secondary", role: "button", style: "font-size:20px;" %>
+  <% unless current_user == u %>
+    <%= link_to "#{u.first_name}", user_path(u.id), class: "btn btn-secondary", role: "button", style: "font-size:20px;" %>
+  <% end %>
 <%end%>
- -->
 
 <p>Find me in app/views/users/show.html.erb</p>
 <p>ID: <%= @user.id %></p>
