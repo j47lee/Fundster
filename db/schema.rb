@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150730041918) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "item_users", force: :cascade do |t|
     t.integer  "item_id"
     t.integer  "user_id"
@@ -21,8 +24,8 @@ ActiveRecord::Schema.define(version: 20150730041918) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "item_users", ["item_id"], name: "index_item_users_on_item_id"
-  add_index "item_users", ["user_id"], name: "index_item_users_on_user_id"
+  add_index "item_users", ["item_id"], name: "index_item_users_on_item_id", using: :btree
+  add_index "item_users", ["user_id"], name: "index_item_users_on_user_id", using: :btree
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -44,4 +47,6 @@ ActiveRecord::Schema.define(version: 20150730041918) do
     t.string   "last_name"
   end
 
+  add_foreign_key "item_users", "items"
+  add_foreign_key "item_users", "users"
 end
