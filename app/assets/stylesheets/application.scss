@@ -14,8 +14,10 @@
  *= require_self
  */
 
- @import "config";
  @import "bootstrap-sprockets";
+ @import "items";
+ @import "sessions";
+ @import "users";
  @import "bootstrap";
 
 body {
