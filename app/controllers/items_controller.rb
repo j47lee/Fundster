@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-#TONY
+
   def add_item_to_user
     @item = Item.find(params[:item])
     @user = current_user
