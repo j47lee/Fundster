@@ -52,6 +52,9 @@ group :development, :test do
 
 end
 
+# for heroku?
+gem 'sprockets', '~> 3.0'
+
 # Heroku
 gem 'rails_12factor', group: :production
 
