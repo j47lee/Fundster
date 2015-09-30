@@ -2,16 +2,16 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 
-require 'sprockets'
-map '/assets' do
-  environment = Sprockets::Environment.new
-  environment.append_path 'app/assets/javascripts'
-  environment.append_path 'app/assets/stylesheets'
-  run environment
-end
-
-map '/' do
-  run Rails.application
-end
+# require 'sprockets'
+# map '/assets' do
+#   environment = Sprockets::Environment.new
+#   environment.append_path 'app/assets/javascripts'
+#   environment.append_path 'app/assets/stylesheets'
+#   run environment
+# end
 #
-# run Rails.application
+# map '/' do
+#   run Rails.application
+# end
+
+run Rails.application
