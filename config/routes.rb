@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :items
 
-#JIMMY DELETE USERS ITEMS
+#DELETE USERS ITEMS
   delete "/users/:id/items/:item_id" => "users#remove_item", as: :remove_item
 
 #FUND USER ITEM
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 #PERCENTAGE COMPLETE
   # get "/users/:id/items/:item_id" => "users#percentage_complete", as: :percentage_complete
 
-#TONY ADD ITEMS TO USER
+#ADD ITEMS TO USER
   get 'add_item_to_user' => 'items#add_item_to_user', as: :add_item_to_user
 
 
